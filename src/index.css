@@ -1,42 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Premium Dark Portfolio Design System */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
+    /* Dark Premium Palette */
+    --background: 220 15% 8%;
+    --background-secondary: 220 13% 12%;
+    --background-card: 220 14% 10%;
+    --foreground: 0 0% 98%;
+    --foreground-muted: 220 9% 75%;
+    
+    /* Premium Gold Accent */
+    --gold: 48 100% 67%;
+    --gold-glow: 48 100% 67%;
+    --gold-muted: 48 20% 45%;
+    
+    /* Glass & Effects */
+    --glass-bg: 220 14% 15%;
+    --glass-border: 220 20% 25%;
+    --shadow-soft: 220 50% 2%;
+    --glow-soft: 48 100% 67%;
+    
+    /* Semantic Colors */
+    --primary: 48 100% 67%;
+    --primary-foreground: 220 15% 8%;
+    --secondary: 220 14% 15%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 220 13% 18%;
+    --muted-foreground: 220 9% 60%;
+    --accent: 48 100% 67%;
+    --accent-foreground: 220 15% 8%;
+    --border: 220 20% 20%;
+    --input: 220 20% 18%;
+    --ring: 48 100% 67%;
+    
+    /* Spacing & Radius */
+    --radius: 1rem;
+    --spacing-section: 6rem;
+    --spacing-element: 3rem;
+    
+    /* Animation Easing */
+    --ease-out-cubic: cubic-bezier(0.33, 1, 0.68, 1);
+    --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +110,120 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-inter antialiased;
+    scroll-behavior: smooth;
+  }
+
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--muted)) hsl(var(--background));
+  }
+
+  /* Animation Classes */
+  .animate-reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 600ms var(--ease-out-cubic);
+  }
+
+  .animate-reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .animate-zoom {
+    opacity: 0;
+    transform: scale(0.95);
+    transition: all 500ms var(--ease-out-cubic);
+  }
+
+  .animate-zoom.revealed {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .animate-parallax {
+    transform: translateY(0);
+    transition: transform 100ms linear;
+  }
+
+  /* Glass Effect */
+  .glass {
+    background: hsl(var(--glass-bg) / 0.8);
+    backdrop-filter: blur(20px);
+    border: 1px solid hsl(var(--glass-border) / 0.2);
+  }
+
+  /* Glow Effects */
+  .glow-soft {
+    box-shadow: 0 0 30px hsl(var(--glow-soft) / 0.2);
+  }
+
+  .glow-accent {
+    box-shadow: 0 0 40px hsl(var(--accent) / 0.3);
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--background));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted));
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--accent) / 0.6);
+  }
+
+  /* Reduced Motion */
+  @media (prefers-reduced-motion: reduce) {
+    .animate-reveal,
+    .animate-zoom,
+    .animate-parallax,
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  /* Button Variants */
+  .btn-primary {
+    @apply bg-primary text-primary-foreground px-8 py-4 rounded-2xl font-medium transition-all duration-300 hover:glow-accent hover:scale-105 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-background;
+  }
+
+  .btn-secondary {
+    @apply bg-transparent border border-accent/30 text-accent px-8 py-4 rounded-2xl font-medium transition-all duration-300 hover:bg-accent/10 hover:border-accent hover:glow-soft focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-background;
+  }
+
+  /* Card Styles */
+  .card-premium {
+    @apply bg-background-card border border-border/50 rounded-3xl p-8 transition-all duration-500 hover:border-accent/30 hover:glow-soft hover:-translate-y-2;
+  }
+
+  /* Text Gradients */
+  .text-gradient {
+    background: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--gold-muted)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Section Spacing */
+  .section-padding {
+    @apply py-24 lg:py-32;
+  }
+
+  /* Grid Layouts */
+  .grid-projects {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8;
   }
 }
