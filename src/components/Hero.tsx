@@ -1,16 +1,15 @@
 import { AnimatedSection } from './AnimatedSection';
 import { cn } from '@/lib/utils';
-
 export const Hero = () => {
   const handleExploreClick = () => {
     const projectsSection = document.querySelector('#projects');
     if (projectsSection) {
-      projectsSection.scrollIntoView({ behavior: 'smooth' });
+      projectsSection.scrollIntoView({
+        behavior: 'smooth'
+      });
     }
   };
-
-  return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+  return <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Animated Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-background via-background-secondary to-background">
         <div className="absolute inset-0 opacity-30">
@@ -27,7 +26,7 @@ export const Hero = () => {
       <div className="relative z-10 container mx-auto px-6 text-center">
         <AnimatedSection delay={200}>
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-8 leading-tight">
-            <span className="text-gradient">[Ton Nom]</span>
+            <span className="text-gradient">ALI MEKZINE</span>
           </h1>
         </AnimatedSection>
 
@@ -40,13 +39,7 @@ export const Hero = () => {
         </AnimatedSection>
 
         <AnimatedSection delay={600}>
-          <button 
-            onClick={handleExploreClick}
-            className={cn(
-              'btn-primary text-lg group relative overflow-hidden',
-              'transform hover:scale-105 transition-all duration-300'
-            )}
-          >
+          <button onClick={handleExploreClick} className={cn('btn-primary text-lg group relative overflow-hidden', 'transform hover:scale-105 transition-all duration-300')}>
             <span className="relative z-10">Explorer mes projets</span>
             <div className="absolute inset-0 bg-gradient-to-r from-accent to-gold opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
           </button>
@@ -62,6 +55,5 @@ export const Hero = () => {
           </div>
         </div>
       </AnimatedSection>
-    </section>
-  );
+    </section>;
 };
