@@ -32,9 +32,9 @@ export const Hero = () => {
 
         <AnimatedSection delay={400}>
           <p className="text-xl md:text-2xl lg:text-3xl mb-12 text-foreground-muted max-w-4xl mx-auto leading-relaxed">
-            J'aide <span className="text-accent font-semibold">[type de clients]</span> à{' '}
-            <span className="text-accent font-semibold">[résultat concret]</span> grâce à{' '}
-            <span className="text-accent font-semibold">[ton expertise]</span>.
+            J'accompagne <span className="text-accent font-semibold">entreprises et indépendants</span> dans la création de{' '}
+            <span className="text-accent font-semibold">sites SEO-friendly</span>. De la conception à la mise en ligne, je privilégie{' '}
+            <span className="text-accent font-semibold">l'expérience utilisateur et l'efficacité visuelle</span> pour fournir des solutions modernes et adaptées aux besoins réels.
           </p>
         </AnimatedSection>
 
