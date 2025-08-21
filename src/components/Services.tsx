@@ -66,19 +66,15 @@ export const Services = () => {
 
         {/* Tools Band */}
         <AnimatedSection delay={800}>
-          <div className="glass rounded-3xl p-8">
-            <h3 className="text-xl font-semibold text-center mb-8 text-accent">
+          <div className="glass rounded-3xl p-8 bg-red-500 border-4 border-yellow-400">
+            <h3 className="text-xl font-semibold text-center mb-8 text-white">
               Technologies & Outils
             </h3>
             <div className="flex flex-wrap justify-center gap-4">
               {tools.map((tool, index) => (
                 <span
                   key={tool}
-                  className="px-4 py-2 bg-muted/30 text-foreground font-medium rounded-xl text-sm hover:bg-accent/10 hover:text-accent transition-all duration-300 animate-reveal opacity-0"
-                  style={{ 
-                    animationDelay: `${1000 + index * 80}ms`,
-                    animationFillMode: 'forwards'
-                  }}
+                  className="px-4 py-2 bg-blue-600 text-white font-medium rounded-xl text-sm border-2 border-green-400"
                 >
                   {tool}
                 </span>
