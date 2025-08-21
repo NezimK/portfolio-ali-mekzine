@@ -33,7 +33,7 @@ export const Contact = () => {
                     </div>
                   </a>
                   
-                  <a href="https://wa.me/33645541319" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-4 text-foreground-muted hover:text-accent transition-colors group">
+                  <a href="https://wa.me/33645541319?text=Bonjour%20Kz%2C%20je%20veux%20parler%20d%27un%20projet%20et%20fixer%20un%20rendez-vous." target="_blank" rel="noopener noreferrer" className="flex items-center space-x-4 text-foreground-muted hover:text-accent transition-colors group">
                     <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
                       <MessageCircle className="w-6 h-6 text-accent" />
                     </div>
