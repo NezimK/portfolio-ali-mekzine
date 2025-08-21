@@ -52,7 +52,7 @@ export const Contact = () => {
                 <h3 className="text-xl font-semibold mb-6 text-accent">Retrouvez-moi</h3>
                 <div className="space-y-4">
                   <a href="https://www.linkedin.com/in/alimekzine" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-4 text-foreground-muted hover:text-accent transition-colors group">
-                    <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors glow-soft">
+                    <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
                       <Linkedin className="w-6 h-6 text-accent" />
                     </div>
                     <div>
@@ -62,7 +62,7 @@ export const Contact = () => {
                   </a>
                   
                   <a href="https://github.com/NezimK" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-4 text-foreground-muted hover:text-accent transition-colors group">
-                    <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors glow-soft">
+                    <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
                       <Github className="w-6 h-6 text-accent" />
                     </div>
                     <div>
