@@ -105,16 +105,31 @@ export const Projects = () => {
                   
                   <div className="space-y-3">
                     {project.video && (
-                      <div className="aspect-video bg-muted/30 rounded-lg flex items-center justify-center text-foreground-muted text-sm">
-                        Vidéo: {project.video}
+                      <div className="bg-gradient-to-r from-accent/20 to-primary/20 border border-accent/30 rounded-lg p-4">
+                        <div className="flex items-center gap-2 mb-2">
+                          <div className="w-2 h-2 bg-accent rounded-full animate-pulse"></div>
+                          <span className="text-accent font-semibold text-sm">VIDÉO DISPONIBLE</span>
+                        </div>
+                        <p className="text-foreground text-xs font-mono bg-muted/50 p-2 rounded">
+                          {project.video}
+                        </p>
                       </div>
                     )}
                     
                     {project.url && (
-                      <button className="btn-secondary w-full group-hover:border-accent/60 transition-colors flex items-center justify-center gap-2">
-                        <ExternalLink className="w-4 h-4" />
-                        Voir le projet
-                      </button>
+                      <div className="bg-gradient-to-r from-primary/20 to-accent/20 border border-primary/30 rounded-lg p-4">
+                        <div className="flex items-center gap-2 mb-2">
+                          <ExternalLink className="w-3 h-3 text-primary" />
+                          <span className="text-primary font-semibold text-sm">LIEN PROJET</span>
+                        </div>
+                        <button className="btn-secondary w-full group-hover:border-accent/60 transition-colors flex items-center justify-center gap-2">
+                          <ExternalLink className="w-4 h-4" />
+                          Voir le projet
+                        </button>
+                        <p className="text-foreground text-xs font-mono bg-muted/50 p-2 rounded mt-2">
+                          {project.url}
+                        </p>
+                      </div>
                     )}
                   </div>
                 </div>)}
