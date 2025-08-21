@@ -26,7 +26,7 @@ const services = [
 
 const tools = [
   'HTML5', 'CSS3', 'JavaScript', 'React', 'Lovable', 'N8N',
-  'TypeScript', 'Figma', 'Python', 'Node.js', 'PostgreSQL'
+  'Figma', 'Python'
 ];
 
 export const Services = () => {
@@ -66,15 +66,15 @@ export const Services = () => {
 
         {/* Tools Band */}
         <AnimatedSection delay={800}>
-          <div className="glass rounded-3xl p-8 bg-red-500 border-4 border-yellow-400">
-            <h3 className="text-xl font-semibold text-center mb-8 text-white">
-              Technologies & Outils
+          <div className="glass rounded-3xl p-8 border border-border/20">
+            <h3 className="text-2xl font-semibold text-center mb-8 text-accent">
+              Technologies & Outils Maîtrisés
             </h3>
-            <div className="flex flex-wrap justify-center gap-4">
+            <div className="flex flex-wrap justify-center gap-3">
               {tools.map((tool, index) => (
                 <span
                   key={tool}
-                  className="px-4 py-2 bg-blue-600 text-white font-medium rounded-xl text-sm border-2 border-green-400"
+                  className="px-6 py-3 bg-gradient-to-r from-accent/10 to-accent/5 text-accent font-semibold rounded-full text-sm border border-accent/20 hover:border-accent/40 hover:from-accent/20 hover:to-accent/10 transition-all duration-300 shadow-sm hover:shadow-md hover:scale-105"
                 >
                   {tool}
                 </span>
