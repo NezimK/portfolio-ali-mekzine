@@ -24,9 +24,11 @@ const professionalProjects = [
 
 const personalProjects = [
   {
-    title: 'Perso 1',
-    description: 'Problème: Gestion manuelle chronophage → Approche: Automatisation intelligente → Résultat: 80% de temps économisé',
-    tags: ['Vue.js', 'Node.js', 'Redis']
+    title: 'Robbie Lens - Site Photographe',
+    description: 'Site web professionnel pour un photographe créé avec HTML5 et CSS3. Design moderne et responsive mettant en valeur le portfolio artistique.',
+    tags: ['HTML5', 'CSS3', 'Design Responsive'],
+    url: 'https://drive.google.com/file/d/1QSp5yVhxopmo1XvkPKaIgIBtr7CkiNSV/view?usp=drive_link',
+    thumbnail: '/lovable-uploads/d7476752-a342-4a08-811b-52a10008dfe5.png'
   },
   {
     title: 'Perso 2',
@@ -128,31 +130,83 @@ export const Projects = () => {
             <h3 className="text-2xl font-bold text-accent mb-8">Projets personnels</h3>
             <div className="grid-projects">
               {personalProjects.map((project, index) => (
-                <div
-                  key={project.title}
-                   className={cn(
-                     'card-premium group opacity-100'
-                   )}
-                 >
-                  <h4 className="text-xl font-semibold mb-4 group-hover:text-accent transition-colors">
-                    {project.title}
-                  </h4>
-                  
-                  <p className="text-foreground-muted mb-6 leading-relaxed text-sm">
-                    {project.description}
-                  </p>
-                  
-                  <div className="flex flex-wrap gap-2">
-                    {project.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="px-3 py-1 bg-muted/50 text-foreground-muted text-xs rounded-full font-medium"
-                      >
-                        {tag}
-                      </span>
-                    ))}
+                project.url ? (
+                  <a
+                    href={project.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    key={project.title}
+                    className={cn(
+                      'card-premium group cursor-pointer block overflow-hidden opacity-100'
+                    )}
+                  >
+                    {/* Thumbnail Image for projects with URL */}
+                    {project.thumbnail && (
+                      <div className="relative mb-4 rounded-lg overflow-hidden h-48 bg-card border border-border">
+                        <img 
+                          src={project.thumbnail} 
+                          alt={`Aperçu de ${project.title}`}
+                          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                        />
+                        <div className="absolute top-4 right-4 bg-accent text-accent-foreground px-3 py-1 rounded-full text-xs font-medium">
+                          Projet Perso
+                        </div>
+                      </div>
+                    )}
+                    
+                    <div className="flex justify-between items-start mb-4">
+                      <h4 className="text-xl font-semibold group-hover:text-accent transition-colors">
+                        {project.title}
+                      </h4>
+                      <ExternalLink className="w-5 h-5 text-foreground-muted group-hover:text-accent transition-colors" />
+                    </div>
+                    
+                    <p className="text-foreground-muted mb-6 leading-relaxed text-sm">
+                      {project.description}
+                    </p>
+                    
+                    <div className="flex flex-wrap gap-2 mb-6">
+                      {project.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="px-3 py-1 bg-muted/50 text-foreground-muted text-xs rounded-full font-medium"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                    
+                    <button className="btn-secondary w-full group-hover:border-accent/60 transition-colors">
+                      Voir le projet
+                    </button>
+                  </a>
+                ) : (
+                  <div
+                    key={project.title}
+                    className={cn(
+                      'card-premium group opacity-100'
+                    )}
+                  >
+                    <h4 className="text-xl font-semibold mb-4 group-hover:text-accent transition-colors">
+                      {project.title}
+                    </h4>
+                    
+                    <p className="text-foreground-muted mb-6 leading-relaxed text-sm">
+                      {project.description}
+                    </p>
+                    
+                    <div className="flex flex-wrap gap-2">
+                      {project.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="px-3 py-1 bg-muted/50 text-foreground-muted text-xs rounded-full font-medium"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
                   </div>
-                </div>
+                )
               ))}
             </div>
           </div>
