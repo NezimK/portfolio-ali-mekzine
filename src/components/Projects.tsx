@@ -5,7 +5,7 @@ const professionalProjects = [{
   title: 'Projet Pro 1',
   description: 'Solution IA révolutionnaire qui a augmenté la productivité client de 300% en automatisant les processus critiques.',
   tags: ['Python', 'React', 'TensorFlow', 'AWS'],
-  url: '[URL projet 1]',
+  url: 'https://quizsuras.com/index.html',
   featured: true
 }, {
   title: 'Projet Pro 2',
