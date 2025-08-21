@@ -75,19 +75,19 @@ export const Projects = () => {
                    }}
                  >
                    {/* Thumbnail Image */}
-                   {project.thumbnail && (
-                     <div className="relative mb-4 rounded-lg overflow-hidden bg-gradient-to-br from-primary/20 to-accent/20">
-                       <img 
-                         src={project.thumbnail} 
-                         alt={`Aperçu de ${project.title}`}
-                         className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
-                       />
-                       <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                       <div className="absolute top-4 right-4 bg-primary/90 text-primary-foreground px-3 py-1 rounded-full text-xs font-medium">
-                         Projet Live
-                       </div>
+                   <div className="relative mb-4 rounded-lg overflow-hidden bg-gradient-to-br from-primary/20 to-accent/20">
+                     <img 
+                       src={project.thumbnail} 
+                       alt={`Aperçu de ${project.title}`}
+                       className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
+                       onLoad={() => console.log('Image loaded:', project.title)}
+                       onError={(e) => console.error('Image failed to load:', project.title, e)}
+                     />
+                     <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                     <div className="absolute top-4 right-4 bg-primary/90 text-primary-foreground px-3 py-1 rounded-full text-xs font-medium">
+                       Projet Live
                      </div>
-                   )}
+                   </div>
                    
                    <div className="flex justify-between items-start mb-4">
                      <h4 className="text-xl font-semibold group-hover:text-accent transition-colors">
