@@ -49,7 +49,7 @@ export const Services = () => {
               delay={200 + index * 150}
               animationType="zoom"
             >
-              <div className="card-premium text-center group">
+              <div className="card-premium text-center group h-full flex flex-col">
                 <div className="w-16 h-16 mx-auto mb-6 rounded-2xl bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
                   <service.icon className="w-8 h-8 text-accent" />
                 </div>
