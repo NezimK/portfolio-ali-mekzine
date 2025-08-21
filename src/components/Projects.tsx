@@ -3,15 +3,13 @@ import { ExternalLink } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import quizSurasThumbnail from '@/assets/quizsuras-thumbnail.png';
 
-console.log('Quiz Suras thumbnail path:', quizSurasThumbnail);
-
 const professionalProjects = [
   {
     title: 'Quiz Suras - Application de Quiz Coranique',
     description: 'Application web interactive pour apprendre et tester ses connaissances sur les sourates du Coran. Interface moderne avec différents niveaux de difficulté et modes de jeu.',
     tags: ['JavaScript', 'HTML5', 'CSS3', 'Quiz Engine'],
     url: 'https://quizsuras.com/index.html',
-    thumbnail: quizSurasThumbnail,
+    thumbnail: '/lovable-uploads/c7e08066-ea37-4a94-8a16-ccc9d462f0f9.png',
     featured: true
   },
   {
