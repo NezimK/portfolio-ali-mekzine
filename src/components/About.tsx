@@ -50,25 +50,25 @@ export const About = () => {
             </AnimatedSection>
 
             <AnimatedSection delay={400}>
-              <div className="glass rounded-3xl p-8">
-                <h3 className="text-xl font-semibold mb-6 text-accent">Mes piliers</h3>
+              <div className="glass rounded-3xl p-8 bg-red-500 border-4 border-yellow-400">
+                <h3 className="text-xl font-semibold mb-6 text-white bg-blue-600 p-2">Mes piliers</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   {pillars.map((pillar, index) => (
                     <div 
                       key={pillar.title}
-                      className="opacity-0 animate-reveal"
+                      className="bg-green-500 border-2 border-purple-400 p-4"
                       style={{ 
                         animationDelay: `${600 + index * 120}ms`,
                         animationFillMode: 'forwards'
                       }}
                     >
                       <div className="flex items-start space-x-3 mb-3">
-                        <div className="w-8 h-8 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                          <pillar.icon className="w-4 h-4 text-accent" />
+                        <div className="w-8 h-8 rounded-lg bg-orange-500 border-2 border-pink-500 flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <pillar.icon className="w-4 h-4 text-white" />
                         </div>
                         <div>
-                          <h4 className="text-foreground font-semibold text-sm mb-1">{pillar.title}</h4>
-                          <p className="text-foreground-muted text-xs leading-relaxed">{pillar.description}</p>
+                          <h4 className="text-white font-semibold text-sm mb-1 bg-black p-1">{pillar.title}</h4>
+                          <p className="text-white text-xs leading-relaxed bg-gray-800 p-1">{pillar.description}</p>
                         </div>
                       </div>
                     </div>
