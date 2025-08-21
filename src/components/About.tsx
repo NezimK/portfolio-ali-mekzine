@@ -56,11 +56,7 @@ export const About = () => {
                   {pillars.map((pillar, index) => (
                     <div 
                       key={pillar.title}
-                      className="opacity-0 animate-reveal"
-                      style={{ 
-                        animationDelay: `${600 + index * 120}ms`,
-                        animationFillMode: 'forwards'
-                      }}
+                      className="opacity-100"
                     >
                       <div className="flex items-start space-x-3 mb-3">
                         <div className="w-8 h-8 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0 mt-0.5">
