@@ -1,5 +1,5 @@
 import { AnimatedSection } from './AnimatedSection';
-import { Mail, Github, Linkedin } from 'lucide-react';
+import { Mail, Github, Linkedin, MessageCircle } from 'lucide-react';
 
 export const Contact = () => {
   return (
@@ -16,30 +16,42 @@ export const Contact = () => {
           </div>
         </AnimatedSection>
 
-        <div className="max-w-2xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           <div className="grid md:grid-cols-2 gap-8">
             {/* Direct Contact */}
             <AnimatedSection delay={200}>
-              <div className="glass rounded-3xl p-8">
+              <div className="glass rounded-3xl p-8 h-full">
                 <h3 className="text-xl font-semibold mb-6 text-accent">Contact direct</h3>
-                <a href="mailto:alimekzine7@gmail.com" className="flex items-center space-x-4 text-foreground-muted hover:text-accent transition-colors group">
-                  <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
-                    <Mail className="w-6 h-6 text-accent" />
-                  </div>
-                  <div>
-                    <p className="font-medium text-foreground">alimekzine7@gmail.com</p>
-                    <p className="text-sm">Réponse sous 24h</p>
-                  </div>
-                </a>
+                <div className="space-y-4">
+                  <a href="mailto:alimekzine7@gmail.com" className="flex items-center space-x-4 text-foreground-muted hover:text-accent transition-colors group">
+                    <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
+                      <Mail className="w-6 h-6 text-accent" />
+                    </div>
+                    <div>
+                      <p className="font-medium text-foreground">alimekzine7@gmail.com</p>
+                      <p className="text-sm">Réponse sous 24h</p>
+                    </div>
+                  </a>
+                  
+                  <a href="https://wa.me/33645541319" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-4 text-foreground-muted hover:text-accent transition-colors group">
+                    <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
+                      <MessageCircle className="w-6 h-6 text-accent" />
+                    </div>
+                    <div>
+                      <p className="font-medium text-foreground">WhatsApp</p>
+                      <p className="text-sm">+33 6 45 54 13 19</p>
+                    </div>
+                  </a>
+                </div>
               </div>
             </AnimatedSection>
 
             {/* Social Links */}
             <AnimatedSection delay={400}>
-              <div className="glass rounded-3xl p-8">
+              <div className="glass rounded-3xl p-8 h-full">
                 <h3 className="text-xl font-semibold mb-6 text-accent">Retrouvez-moi</h3>
                 <div className="space-y-4">
-                  <a href="[Lien LinkedIn]" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-4 text-foreground-muted hover:text-accent transition-colors group">
+                  <a href="https://www.linkedin.com/in/alimekzine" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-4 text-foreground-muted hover:text-accent transition-colors group">
                     <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors glow-soft">
                       <Linkedin className="w-6 h-6 text-accent" />
                     </div>
@@ -49,13 +61,13 @@ export const Contact = () => {
                     </div>
                   </a>
                   
-                  <a href="[Lien GitHub]" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-4 text-foreground-muted hover:text-accent transition-colors group">
+                  <a href="https://github.com/NezimK" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-4 text-foreground-muted hover:text-accent transition-colors group">
                     <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors glow-soft">
                       <Github className="w-6 h-6 text-accent" />
                     </div>
                     <div>
                       <p className="font-medium text-foreground">GitHub</p>
-                      <p className="text-sm">/nezimk</p>
+                      <p className="text-sm">@NezimK</p>
                     </div>
                   </a>
                 </div>
