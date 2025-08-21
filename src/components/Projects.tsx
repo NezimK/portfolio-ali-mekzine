@@ -17,15 +17,20 @@ const professionalProjects = [{
 const personalProjects = [{
   title: 'Perso 1',
   description: 'Problème: Gestion manuelle chronophage → Approche: Automatisation intelligente → Résultat: 80% de temps économisé',
-  tags: ['Vue.js', 'Node.js', 'Redis']
+  tags: ['Vue.js', 'Node.js', 'Redis'],
+  url: '[URL projet perso 1]',
+  video: '[URL vidéo projet 1]'
 }, {
   title: 'Perso 2',
   description: 'Problème: UX fragmentée → Approche: Design system unifié → Résultat: +150% engagement utilisateur',
-  tags: ['Figma', 'React', 'Storybook']
+  tags: ['Figma', 'React', 'Storybook'],
+  url: '[URL projet perso 2]',
+  video: '[URL vidéo projet 2]'
 }, {
   title: 'Perso 3',
   description: 'Problème: Analytics dispersées → Approche: Dashboard centralisé → Résultat: Décisions 5x plus rapides',
-  tags: ['D3.js', 'Python', 'FastAPI']
+  tags: ['D3.js', 'Python', 'FastAPI'],
+  video: '[URL vidéo projet 3]'
 }];
 export const Projects = () => {
   return <section id="projects" className="section-padding bg-background-secondary">
@@ -92,10 +97,25 @@ export const Projects = () => {
                     {project.description}
                   </p>
                   
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-2 mb-4">
                     {project.tags.map(tag => <span key={tag} className="px-3 py-1 bg-muted/50 text-foreground-muted text-xs rounded-full font-medium">
                         {tag}
                       </span>)}
+                  </div>
+                  
+                  <div className="space-y-3">
+                    {project.video && (
+                      <div className="aspect-video bg-muted/30 rounded-lg flex items-center justify-center text-foreground-muted text-sm">
+                        Vidéo: {project.video}
+                      </div>
+                    )}
+                    
+                    {project.url && (
+                      <button className="btn-secondary w-full group-hover:border-accent/60 transition-colors flex items-center justify-center gap-2">
+                        <ExternalLink className="w-4 h-4" />
+                        Voir le projet
+                      </button>
+                    )}
                   </div>
                 </div>)}
             </div>
