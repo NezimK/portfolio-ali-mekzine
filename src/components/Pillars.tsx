@@ -5,7 +5,7 @@ const pillars = [
   {
     icon: Zap,
     title: 'Performance',
-    description: 'Optimisation constante pour des applications rapides et scalables qui offrent une expérience utilisateur fluide.',
+    description: 'Optimisation constante pour des sites web rapides et scalables qui offrent une expérience utilisateur fluide.',
     color: 'from-yellow-400/20 to-orange-400/20'
   },
   {
