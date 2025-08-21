@@ -56,17 +56,20 @@ export const About = () => {
                   {pillars.map((pillar, index) => (
                     <div 
                       key={pillar.title}
-                      className="opacity-100"
+                      className="animate-fade-in hover-scale"
+                      style={{ 
+                        animationDelay: `${200 + index * 100}ms`
+                      }}
                     >
-                      <div className="flex items-start space-x-3 mb-3">
-                        <div className="w-8 h-8 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                          <pillar.icon className="w-4 h-4 text-accent" />
-                        </div>
-                        <div>
-                          <h4 className="text-foreground font-semibold text-sm mb-1">{pillar.title}</h4>
-                          <p className="text-foreground-muted text-xs leading-relaxed">{pillar.description}</p>
-                        </div>
-                      </div>
+                       <div className="flex items-start space-x-3 mb-3 group">
+                         <div className="w-8 h-8 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:bg-accent/20 transition-colors duration-300">
+                           <pillar.icon className="w-4 h-4 text-accent group-hover:scale-110 transition-transform duration-300" />
+                         </div>
+                         <div>
+                           <h4 className="text-foreground font-semibold text-sm mb-1 group-hover:text-accent transition-colors duration-300">{pillar.title}</h4>
+                           <p className="text-foreground-muted text-xs leading-relaxed">{pillar.description}</p>
+                         </div>
+                       </div>
                     </div>
                   ))}
                 </div>
