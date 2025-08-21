@@ -16,7 +16,7 @@ const professionalProjects = [
     title: 'Air Sana - E-commerce Humidificateurs', 
     description: 'Plateforme e-commerce moderne spécialisée dans les humidificateurs et produits de bien-être. Interface élégante avec système de panier, paiement sécurisé et gestion des commandes.',
     tags: ['React', 'E-commerce', 'Stripe', 'Design Premium'],
-    url: '#',
+    url: 'https://airsana.fr/',
     thumbnail: '/lovable-uploads/bfd6da07-62f5-4605-9985-0a82f50225a5.png',
     featured: true
   }
