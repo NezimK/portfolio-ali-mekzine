@@ -13,10 +13,11 @@ const professionalProjects = [
     featured: true
   },
   {
-    title: 'Projet Pro 2', 
-    description: 'Plateforme SaaS complète générant 2M€ ARR, servant 50k+ utilisateurs avec 99.9% uptime.',
-    tags: ['Next.js', 'PostgreSQL', 'Stripe', 'Vercel'],
-    url: '[URL projet 2]',
+    title: 'Air Sana - E-commerce Humidificateurs', 
+    description: 'Plateforme e-commerce moderne spécialisée dans les humidificateurs et produits de bien-être. Interface élégante avec système de panier, paiement sécurisé et gestion des commandes.',
+    tags: ['React', 'E-commerce', 'Stripe', 'Design Premium'],
+    url: '#',
+    thumbnail: '/lovable-uploads/bfd6da07-62f5-4605-9985-0a82f50225a5.png',
     featured: true
   }
 ];
@@ -71,18 +72,14 @@ export const Projects = () => {
                     )}
                   >
                      {/* Thumbnail Image - Display for all projects with fallback */}
-                     <div className="relative mb-4 rounded-lg overflow-hidden h-48 bg-red-500 border-2 border-yellow-400">
-                       <div className="absolute top-0 left-0 bg-green-500 text-white px-2 py-1 text-xs z-10">
-                         Path: {project.thumbnail}
-                       </div>
+                     <div className="relative mb-4 rounded-lg overflow-hidden h-48 bg-card border border-border">
                        {project.thumbnail ? (
                          <img 
                            src={project.thumbnail} 
                            alt={`Aperçu de ${project.title}`}
                            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                           onLoad={() => console.log('Image loaded successfully:', project.title, project.thumbnail)}
-                           onError={(e) => console.error('Image failed to load:', project.title, project.thumbnail, e)}
-                           style={{border: '3px solid blue'}}
+                           onLoad={() => console.log('Image loaded successfully:', project.title)}
+                           onError={(e) => console.error('Image failed to load:', project.title, e)}
                          />
                        ) : (
                          <div className="w-full h-full flex items-center justify-center text-muted-foreground">
