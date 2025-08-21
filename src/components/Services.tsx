@@ -25,8 +25,8 @@ const services = [
 ];
 
 const tools = [
-  'Python', 'React', 'Next.js', 'TypeScript', 'Figma', 
-  'AWS', 'PostgreSQL', 'TensorFlow', 'Docker', 'Stripe'
+  'HTML5', 'CSS3', 'JavaScript', 'React', 'Lovable', 'N8N',
+  'TypeScript', 'Figma', 'Python', 'Node.js', 'PostgreSQL'
 ];
 
 export const Services = () => {
