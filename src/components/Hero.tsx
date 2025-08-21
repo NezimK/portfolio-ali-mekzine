@@ -50,8 +50,8 @@ export const Hero = () => {
       <AnimatedSection delay={1000} className="absolute bottom-4 md:bottom-8 left-1/2 transform -translate-x-1/2">
         <div className="flex flex-col items-center space-y-1 md:space-y-2 animate-bounce">
           <span className="text-xs text-foreground-muted font-medium hidden sm:block">Défiler</span>
-          <div className="w-5 h-8 md:w-6 md:h-10 border-2 border-accent/30 rounded-full flex justify-center">
-            <div className="w-0.5 md:w-1 h-2 md:h-3 bg-accent rounded-full mt-1.5 md:mt-2 animate-pulse"></div>
+          <div className="w-5 h-8 md:w-6 md:h-10 border-2 border-accent/30 rounded-full flex justify-center items-center">
+            <div className="w-0.5 md:w-1 h-2 md:h-3 bg-accent rounded-full animate-pulse"></div>
           </div>
         </div>
       </AnimatedSection>
