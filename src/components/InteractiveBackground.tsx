@@ -27,7 +27,7 @@ export const InteractiveBackground = () => {
 
     const resizeCanvas = () => {
       canvas.width = window.innerWidth;
-      canvas.height = Math.max(window.innerHeight, document.documentElement.scrollHeight);
+      canvas.height = window.innerHeight;
     };
 
     const createParticles = () => {
@@ -170,11 +170,10 @@ export const InteractiveBackground = () => {
   return (
     <canvas
       ref={canvasRef}
-      className="absolute inset-0 pointer-events-none"
+      className="fixed inset-0 pointer-events-none"
       style={{ 
         zIndex: 1,
-        transform: `translateY(${scrollOffset * 0.3}px)`,
-        height: `${Math.max(window.innerHeight, document.documentElement.scrollHeight)}px`
+        transform: `translateY(${scrollOffset * 0.2}px)`
       }}
     />
   );
