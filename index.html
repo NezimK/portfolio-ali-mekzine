@@ -183,17 +183,40 @@
     </noscript>
 
     <script>
-      // Hide fallback and show React app when DOM is ready
-      document.addEventListener('DOMContentLoaded', function() {
+      // Auto-hide fallback after max 3 seconds
+      let fallbackHidden = false;
+      
+      function hideFallback() {
+        if (fallbackHidden) return;
+        fallbackHidden = true;
+        
         const fallback = document.getElementById('fallback');
         const root = document.getElementById('root');
         
-        // Wait a brief moment to ensure React has started loading
-        setTimeout(function() {
-          if (fallback) fallback.style.display = 'none';
-          if (root) root.style.display = 'block';
-        }, 100);
+        if (fallback) {
+          fallback.style.opacity = '0';
+          fallback.style.transition = 'opacity 0.5s ease-out';
+          setTimeout(() => {
+            fallback.style.display = 'none';
+          }, 500);
+        }
+        if (root) {
+          root.style.display = 'block';
+          root.style.opacity = '0';
+          root.style.transition = 'opacity 0.5s ease-in';
+          setTimeout(() => {
+            root.style.opacity = '1';
+          }, 100);
+        }
+      }
+
+      // Hide fallback when DOM is ready OR after 3 seconds (whichever comes first)
+      document.addEventListener('DOMContentLoaded', function() {
+        setTimeout(hideFallback, 100);
       });
+      
+      // Force hide fallback after 3 seconds maximum
+      setTimeout(hideFallback, 3000);
     </script>
 
     <script type="module" src="/src/main.tsx"></script>
