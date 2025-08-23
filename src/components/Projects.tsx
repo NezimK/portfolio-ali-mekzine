@@ -44,17 +44,17 @@ const personalProjects = [
 
 export const Projects = () => {
   return (
-    <section id="projects" className="section-padding bg-background-secondary">
+    <section id="projects" className="section-padding bg-background-secondary" aria-labelledby="projects-heading">
       <div className="container mx-auto px-6">
         <AnimatedSection>
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <header className="text-center mb-16">
+            <h2 id="projects-heading" className="text-4xl md:text-5xl font-bold mb-6">
               Mes <span className="text-gradient">Réalisations</span>
             </h2>
             <p className="text-xl text-foreground-muted max-w-2xl mx-auto">
               Sélection de projets professionnels et personnels.
             </p>
-          </div>
+          </header>
         </AnimatedSection>
 
         {/* Professional Projects */}
@@ -76,13 +76,14 @@ export const Projects = () => {
                      {/* Thumbnail Image - Display for all projects with fallback */}
                      <div className="relative mb-4 rounded-lg overflow-hidden h-48 bg-card border border-border">
                        {project.thumbnail ? (
-                         <img 
-                           src={project.thumbnail} 
-                           alt={`Aperçu de ${project.title}`}
-                           className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                           onLoad={() => console.log('Image loaded successfully:', project.title)}
-                           onError={(e) => console.error('Image failed to load:', project.title, e)}
-                         />
+                          <img 
+                            src={project.thumbnail} 
+                            alt={`Capture d'écran du projet ${project.title} - ${project.description.slice(0, 80)}...`}
+                            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                            loading="lazy"
+                            width="400"
+                            height="300"
+                          />
                        ) : (
                          <div className="w-full h-full flex items-center justify-center text-muted-foreground">
                            <ExternalLink className="w-16 h-16" />
@@ -143,11 +144,14 @@ export const Projects = () => {
                     {/* Thumbnail Image for projects with URL */}
                     {project.thumbnail && (
                       <div className="relative mb-4 rounded-lg overflow-hidden h-48 bg-card border border-border">
-                        <img 
-                          src={project.thumbnail} 
-                          alt={`Aperçu de ${project.title}`}
-                          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                        />
+                         <img 
+                           src={project.thumbnail} 
+                           alt={`Portfolio projet ${project.title} - ${project.description.slice(0, 80)}...`}
+                           className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                           loading="lazy"
+                           width="400"
+                           height="300"
+                         />
                         <div className="absolute top-4 right-4 bg-accent text-accent-foreground px-3 py-1 rounded-full text-xs font-medium">
                           Projet Perso
                         </div>

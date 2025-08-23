@@ -23,11 +23,12 @@ export const Hero = () => {
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-accent/5 rounded-full blur-3xl"></div>
       </div>
 
-      <div className="relative z-10 container mx-auto px-6 text-center">
+      <main className="relative z-10 container mx-auto px-6 text-center">
         <AnimatedSection delay={200}>
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-8 leading-tight">
             <span className="text-gradient">ALI MEKZINE</span>
           </h1>
+          <p className="sr-only">UX Designer et Développeur Web spécialisé en sites SEO-friendly</p>
         </AnimatedSection>
 
         <AnimatedSection delay={400}>
@@ -44,7 +45,7 @@ export const Hero = () => {
             <div className="absolute inset-0 bg-gradient-to-r from-accent to-gold opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
           </button>
         </AnimatedSection>
-      </div>
+      </main>
 
       {/* Scroll indicator */}
       <AnimatedSection delay={1000} className="absolute bottom-4 md:bottom-8 left-1/2 transform -translate-x-1/2">

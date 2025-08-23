@@ -26,11 +26,11 @@ const pillars = [
 
 export const About = () => {
   return (
-    <section id="about" className="section-padding">
+    <section id="about" className="section-padding" aria-labelledby="about-heading">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
           <AnimatedSection>
-            <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
+            <h2 id="about-heading" className="text-4xl md:text-5xl font-bold text-center mb-16">
               À <span className="text-gradient">propos</span>
             </h2>
           </AnimatedSection>
