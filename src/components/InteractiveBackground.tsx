@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 interface Particle {
   x: number;
@@ -16,6 +16,7 @@ export const InteractiveBackground = () => {
   const particlesRef = useRef<Particle[]>([]);
   const mouseRef = useRef({ x: 0, y: 0 });
   const scrollOffsetRef = useRef(0);
+  const [scrollOffset, setScrollOffset] = useState(0);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -26,7 +27,7 @@ export const InteractiveBackground = () => {
 
     const resizeCanvas = () => {
       canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+      canvas.height = Math.max(window.innerHeight, document.documentElement.scrollHeight);
     };
 
     const createParticles = () => {
@@ -56,6 +57,7 @@ export const InteractiveBackground = () => {
 
     const handleScroll = () => {
       scrollOffsetRef.current = window.scrollY;
+      setScrollOffset(window.scrollY);
     };
 
     const animate = () => {
@@ -168,8 +170,12 @@ export const InteractiveBackground = () => {
   return (
     <canvas
       ref={canvasRef}
-      className="fixed inset-0 pointer-events-none"
-      style={{ zIndex: 1 }}
+      className="absolute inset-0 pointer-events-none"
+      style={{ 
+        zIndex: 1,
+        transform: `translateY(${scrollOffset * 0.3}px)`,
+        height: `${Math.max(window.innerHeight, document.documentElement.scrollHeight)}px`
+      }}
     />
   );
 };
