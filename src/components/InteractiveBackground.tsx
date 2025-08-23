@@ -140,7 +140,7 @@ export const InteractiveBackground = () => {
   return (
     <canvas
       ref={canvasRef}
-      className="absolute inset-0 pointer-events-none"
+      className="fixed inset-0 pointer-events-none"
       style={{ zIndex: 1 }}
     />
   );
