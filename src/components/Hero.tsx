@@ -1,4 +1,5 @@
 import { AnimatedSection } from './AnimatedSection';
+import { InteractiveBackground } from './InteractiveBackground';
 import { cn } from '@/lib/utils';
 export const Hero = () => {
   const handleExploreClick = () => {
@@ -10,17 +11,18 @@ export const Hero = () => {
     }
   };
   return <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Animated Background */}
+      {/* Interactive Animated Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-background via-background-secondary to-background">
-        <div className="absolute inset-0 opacity-30">
-          {/* Subtle particles animation */}
-          <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-accent/40 rounded-full animate-pulse"></div>
-          <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-gold/60 rounded-full animate-pulse delay-700"></div>
-          <div className="absolute bottom-1/4 left-1/3 w-1.5 h-1.5 bg-accent/30 rounded-full animate-pulse delay-1000"></div>
-          <div className="absolute top-2/3 right-1/4 w-1 h-1 bg-gold/50 rounded-full animate-pulse delay-500"></div>
+        <InteractiveBackground />
+        <div className="absolute inset-0 opacity-20">
+          {/* Floating elements that react to mouse */}
+          <div className="absolute top-1/4 left-1/4 w-3 h-3 bg-accent/60 rounded-full animate-pulse"></div>
+          <div className="absolute top-1/3 right-1/3 w-2 h-2 bg-gold/70 rounded-full animate-pulse delay-700"></div>
+          <div className="absolute bottom-1/4 left-1/3 w-2.5 h-2.5 bg-accent/40 rounded-full animate-pulse delay-1000"></div>
+          <div className="absolute top-2/3 right-1/4 w-2 h-2 bg-gold/60 rounded-full animate-pulse delay-500"></div>
         </div>
-        {/* Glow orb */}
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-accent/5 rounded-full blur-3xl"></div>
+        {/* Enhanced glow effect */}
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-accent/8 rounded-full blur-3xl animate-pulse"></div>
       </div>
 
       <main className="relative z-10 container mx-auto px-6 text-center">
