@@ -32,16 +32,6 @@ export const Contact = () => {
                       <p className="text-sm">Réponse sous 24h</p>
                     </div>
                   </a>
-                  
-                  <a href="https://wa.me/33645541319?text=Bonjour%20Ali%2C%20je%20veux%20parler%20d%27un%20projet%20et%20fixer%20un%20rendez-vous." target="_blank" rel="noopener noreferrer" className="flex items-center space-x-4 text-foreground-muted hover:text-accent transition-colors group">
-                    <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
-                      <MessageCircle className="w-6 h-6 text-accent" />
-                    </div>
-                    <div>
-                      <p className="font-medium text-foreground">WhatsApp</p>
-                      <p className="text-sm">+33 6 45 54 13 19</p>
-                    </div>
-                  </a>
                 </div>
               </div>
             </AnimatedSection>
