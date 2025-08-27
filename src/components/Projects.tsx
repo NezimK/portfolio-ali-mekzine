@@ -3,14 +3,15 @@ import { ExternalLink } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import quizSurasThumbnail from '@/assets/quizsuras-thumbnail.png';
 
-const professionalProjects = [
+const allProjects = [
   {
     title: 'Quiz Suras - Application de Quiz Coranique',
     description: 'Application web interactive pour apprendre et tester ses connaissances sur les sourates du Coran. Interface moderne avec différents niveaux de difficulté et modes de jeu.',
     tags: ['JavaScript', 'HTML5', 'CSS3', 'Quiz Engine'],
     url: 'https://quizsuras.com/index.html',
     thumbnail: '/lovable-uploads/c7e08066-ea37-4a94-8a16-ccc9d462f0f9.png',
-    featured: true
+    featured: true,
+    type: 'professional'
   },
   {
     title: 'Air Sana - E-commerce Humidificateurs', 
@@ -18,27 +19,28 @@ const professionalProjects = [
     tags: ['React', 'E-commerce', 'Stripe', 'Design Premium'],
     url: 'https://airsana.fr/',
     thumbnail: '/lovable-uploads/bfd6da07-62f5-4605-9985-0a82f50225a5.png',
-    featured: true
-  }
-];
-
-const personalProjects = [
+    featured: true,
+    type: 'professional'
+  },
   {
     title: 'Robbie Lens - Site Photographe',
     description: 'Site web professionnel pour un photographe créé avec HTML5 et CSS3. Design moderne et responsive mettant en valeur le portfolio artistique.',
     tags: ['HTML5', 'CSS3', 'Design Responsive'],
     url: 'https://drive.google.com/file/d/1QSp5yVhxopmo1XvkPKaIgIBtr7CkiNSV/view?usp=drive_link',
-    thumbnail: '/lovable-uploads/d7476752-a342-4a08-811b-52a10008dfe5.png'
+    thumbnail: '/lovable-uploads/d7476752-a342-4a08-811b-52a10008dfe5.png',
+    type: 'personal'
   },
   {
     title: 'Perso 2',
     description: 'Problème: UX fragmentée → Approche: Design system unifié → Résultat: +150% engagement utilisateur',
-    tags: ['Figma', 'React', 'Storybook']
+    tags: ['Figma', 'React', 'Storybook'],
+    type: 'personal'
   },
   {
     title: 'Perso 3',
     description: 'Problème: Analytics dispersées → Approche: Dashboard centralisé → Résultat: Décisions 5x plus rapides',
-    tags: ['D3.js', 'Python', 'FastAPI']
+    tags: ['D3.js', 'Python', 'FastAPI'],
+    type: 'personal'
   }
 ];
 
@@ -49,170 +51,120 @@ export const Projects = () => {
         <AnimatedSection>
           <header className="text-center mb-16">
             <h2 id="projects-heading" className="text-4xl md:text-5xl font-bold mb-6">
-              Mes <span className="text-gradient">Réalisations</span>
+              Mes <span className="text-gradient">Projets</span>
             </h2>
             <p className="text-xl text-foreground-muted max-w-2xl mx-auto">
-              Sélection de projets professionnels et personnels.
+              Sélection de mes réalisations professionnelles et personnelles.
             </p>
           </header>
         </AnimatedSection>
 
-        {/* Professional Projects */}
         <AnimatedSection delay={200}>
-          <div className="mb-16">
-            <h3 className="text-2xl font-bold text-accent mb-8">Projets professionnels</h3>
-            <div className="grid md:grid-cols-2 gap-8">
-              {professionalProjects.map((project, index) => (
-                 <a
-                   href={project.url}
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   key={project.title}
-                    className={cn(
-                      'card-premium group cursor-pointer block overflow-hidden',
-                      'hover-scale opacity-100'
-                    )}
-                  >
-                     {/* Thumbnail Image - Display for all projects with fallback */}
-                     <div className="relative mb-4 rounded-lg overflow-hidden h-48 bg-card border border-border">
-                       {project.thumbnail ? (
-                          <img 
-                            src={project.thumbnail} 
-                            alt={`Capture d'écran du projet ${project.title} - ${project.description.slice(0, 80)}...`}
-                            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                            loading="lazy"
-                            width="400"
-                            height="300"
-                          />
-                       ) : (
-                         <div className="w-full h-full flex items-center justify-center text-muted-foreground">
-                           <ExternalLink className="w-16 h-16" />
-                         </div>
-                       )}
-                       <div className="absolute top-4 right-4 bg-primary text-primary-foreground px-3 py-1 rounded-full text-xs font-medium">
-                         Projet Live
-                       </div>
-                     </div>
-                   
-                   <div className="flex justify-between items-start mb-4">
-                     <h4 className="text-xl font-semibold group-hover:text-accent transition-colors">
-                       {project.title}
-                     </h4>
-                     <ExternalLink className="w-5 h-5 text-foreground-muted group-hover:text-accent transition-colors" />
-                   </div>
-                   
-                   <p className="text-foreground-muted mb-6 leading-relaxed">
-                     {project.description}
-                   </p>
-                   
-                   <div className="flex flex-wrap gap-2 mb-6">
-                     {project.tags.map((tag) => (
-                       <span
-                         key={tag}
-                         className="px-3 py-1 bg-accent/20 text-accent text-sm rounded-full font-medium"
-                       >
-                         {tag}
-                       </span>
-                     ))}
-                   </div>
-                   
-                    <button className="btn-secondary w-full group-hover:border-accent/60 transition-colors">
-                      Visiter le site
-                    </button>
-                 </a>
-              ))}
-            </div>
-          </div>
-        </AnimatedSection>
-
-        {/* Personal Projects */}
-        <AnimatedSection delay={600}>
-          <div>
-            <h3 className="text-2xl font-bold text-accent mb-8">Projets personnels</h3>
-            <div className="grid-projects">
-              {personalProjects.map((project, index) => (
-                project.url ? (
-                  <a
-                    href={project.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    key={project.title}
-                    className={cn(
-                      'card-premium group cursor-pointer block overflow-hidden opacity-100'
-                    )}
-                  >
-                    {/* Thumbnail Image for projects with URL */}
-                    {project.thumbnail && (
-                      <div className="relative mb-4 rounded-lg overflow-hidden h-48 bg-card border border-border">
-                         <img 
-                           src={project.thumbnail} 
-                           alt={`Portfolio projet ${project.title} - ${project.description.slice(0, 80)}...`}
-                           className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                           loading="lazy"
-                           width="400"
-                           height="300"
-                         />
-                        <div className="absolute top-4 right-4 bg-accent text-accent-foreground px-3 py-1 rounded-full text-xs font-medium">
-                          Projet Perso
-                        </div>
+          <div className="grid md:grid-cols-2 gap-8">
+            {allProjects.map((project, index) => (
+              project.url ? (
+                <a
+                  href={project.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  key={project.title}
+                  className={cn(
+                    'card-premium group cursor-pointer block overflow-hidden',
+                    'hover-scale opacity-100'
+                  )}
+                >
+                  {/* Thumbnail Image */}
+                  <div className="relative mb-4 rounded-lg overflow-hidden h-48 bg-card border border-border">
+                    {project.thumbnail ? (
+                      <img 
+                        src={project.thumbnail} 
+                        alt={`Capture d'écran du projet ${project.title} - ${project.description.slice(0, 80)}...`}
+                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                        loading="lazy"
+                        width="400"
+                        height="300"
+                      />
+                    ) : (
+                      <div className="w-full h-full flex items-center justify-center text-muted-foreground">
+                        <ExternalLink className="w-16 h-16" />
                       </div>
                     )}
-                    
-                    <div className="flex justify-between items-start mb-4">
-                      <h4 className="text-xl font-semibold group-hover:text-accent transition-colors">
-                        {project.title}
-                      </h4>
-                      <ExternalLink className="w-5 h-5 text-foreground-muted group-hover:text-accent transition-colors" />
-                    </div>
-                    
-                    <p className="text-foreground-muted mb-6 leading-relaxed text-sm">
-                      {project.description}
-                    </p>
-                    
-                    <div className="flex flex-wrap gap-2 mb-6">
-                      {project.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="px-3 py-1 bg-muted/50 text-foreground-muted text-xs rounded-full font-medium"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                    
-                    <button className="btn-secondary w-full group-hover:border-accent/60 transition-colors">
-                      Voir le projet
-                    </button>
-                  </a>
-                ) : (
-                  <div
-                    key={project.title}
-                    className={cn(
-                      'card-premium group opacity-100'
-                    )}
-                  >
-                    <h4 className="text-xl font-semibold mb-4 group-hover:text-accent transition-colors">
-                      {project.title}
-                    </h4>
-                    
-                    <p className="text-foreground-muted mb-6 leading-relaxed text-sm">
-                      {project.description}
-                    </p>
-                    
-                    <div className="flex flex-wrap gap-2">
-                      {project.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="px-3 py-1 bg-muted/50 text-foreground-muted text-xs rounded-full font-medium"
-                        >
-                          {tag}
-                        </span>
-                      ))}
+                    <div className={cn(
+                      "absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-medium",
+                      project.type === 'professional' 
+                        ? "bg-primary text-primary-foreground" 
+                        : "bg-accent text-accent-foreground"
+                    )}>
+                      {project.type === 'professional' ? 'Professionnel' : 'Personnel'}
                     </div>
                   </div>
-                )
-              ))}
-            </div>
+                
+                  <div className="flex justify-between items-start mb-4">
+                    <h4 className="text-xl font-semibold group-hover:text-accent transition-colors">
+                      {project.title}
+                    </h4>
+                    <ExternalLink className="w-5 h-5 text-foreground-muted group-hover:text-accent transition-colors" />
+                  </div>
+                  
+                  <p className="text-foreground-muted mb-6 leading-relaxed">
+                    {project.description}
+                  </p>
+                  
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {project.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className={cn(
+                          "px-3 py-1 text-sm rounded-full font-medium",
+                          project.type === 'professional'
+                            ? "bg-accent/20 text-accent"
+                            : "bg-muted/50 text-foreground-muted"
+                        )}
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                  
+                  <button className="btn-secondary w-full group-hover:border-accent/60 transition-colors">
+                    {project.type === 'professional' ? 'Visiter le site' : 'Voir le projet'}
+                  </button>
+                </a>
+              ) : (
+                <div
+                  key={project.title}
+                  className={cn(
+                    'card-premium group opacity-100'
+                  )}
+                >
+                  <div className={cn(
+                    "inline-block px-3 py-1 rounded-full text-xs font-medium mb-4",
+                    "bg-accent text-accent-foreground"
+                  )}>
+                    Personnel
+                  </div>
+                  
+                  <h4 className="text-xl font-semibold mb-4 group-hover:text-accent transition-colors">
+                    {project.title}
+                  </h4>
+                  
+                  <p className="text-foreground-muted mb-6 leading-relaxed">
+                    {project.description}
+                  </p>
+                  
+                  <div className="flex flex-wrap gap-2">
+                    {project.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="px-3 py-1 bg-muted/50 text-foreground-muted text-sm rounded-full font-medium"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )
+            ))}
           </div>
         </AnimatedSection>
       </div>
