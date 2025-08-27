@@ -28,9 +28,7 @@ export const About = () => {
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto">
           <AnimatedSection>
-            <h2 id="about-heading" className="text-4xl md:text-5xl font-bold text-center mb-16">
-              À <span className="text-gradient">propos</span>
-            </h2>
+            
           </AnimatedSection>
 
           <div className="max-w-3xl mx-auto text-center">
