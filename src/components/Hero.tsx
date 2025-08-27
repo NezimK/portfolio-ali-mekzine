@@ -46,7 +46,7 @@ export const Hero = () => {
       </main>
 
       {/* Scroll indicator */}
-      <AnimatedSection delay={1000} className="absolute bottom-4 md:bottom-8 left-1/2 transform -translate-x-1/2">
+      <AnimatedSection delay={1000} className="absolute bottom-4 md:bottom-8 left-1/2 transform -translate-x-1/2 -translate-x-4">
         <div className="flex flex-col items-center space-y-1 md:space-y-2 animate-bounce">
           <span className="text-xs text-foreground-muted font-medium hidden sm:block">Défiler</span>
           <div className="w-5 h-8 md:w-6 md:h-10 border-2 border-accent/30 rounded-full flex justify-center items-center">
