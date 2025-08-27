@@ -44,8 +44,12 @@ export const About = () => {
           <div className="max-w-3xl mx-auto text-center">
             <AnimatedSection delay={200}>
               <div className="glass rounded-3xl p-8 md:p-12 space-y-8">
-                <div className="w-16 h-16 mx-auto bg-gradient-to-br from-accent to-gold rounded-2xl flex items-center justify-center mb-8">
-                  <div className="w-8 h-8 bg-background rounded-lg"></div>
+                <div className="relative w-20 h-20 mx-auto mb-8">
+                  <div className="absolute inset-0 bg-gradient-to-br from-accent via-gold to-accent rounded-2xl animate-pulse"></div>
+                  <div className="absolute inset-1 bg-background rounded-xl flex items-center justify-center">
+                    <div className="w-8 h-8 bg-gradient-to-br from-accent to-gold rounded-lg transform rotate-45"></div>
+                  </div>
+                  <div className="absolute -top-1 -right-1 w-4 h-4 bg-gold rounded-full animate-ping"></div>
                 </div>
                 <p className="text-lg md:text-xl text-foreground-muted leading-relaxed">
                   Passionné de technologie, je conçois des sites web et des applications qui allient design et performance. J'accompagne également la transformation digitale des entreprises en automatisant leurs processus pour éliminer les tâches répétitives et gagner en efficacité.
