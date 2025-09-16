@@ -83,14 +83,6 @@ export const Projects = () => {
                         <ExternalLink className="w-16 h-16" />
                       </div>
                     )}
-                    <div className={cn(
-                      "absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-medium",
-                      project.type === 'professional' 
-                        ? "bg-primary text-primary-foreground" 
-                        : "bg-accent text-accent-foreground"
-                    )}>
-                      {project.type === 'professional' ? 'Professionnel' : 'Personnel'}
-                    </div>
                   </div>
                 
                   <div className="flex justify-between items-start mb-4">
@@ -126,12 +118,6 @@ export const Projects = () => {
                     'card-premium group opacity-100'
                   )}
                 >
-                  <div className={cn(
-                    "inline-block px-3 py-1 rounded-full text-xs font-medium mb-4",
-                    "bg-accent text-accent-foreground"
-                  )}>
-                    Personnel
-                  </div>
                   
                   <h4 className="text-xl font-semibold mb-4 group-hover:text-accent transition-colors">
                     {project.title}
