@@ -108,12 +108,7 @@ export const Projects = () => {
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
-                        className={cn(
-                          "px-3 py-1 text-sm rounded-full font-medium",
-                          project.type === 'professional'
-                            ? "bg-accent/20 text-accent"
-                            : "bg-muted/50 text-foreground-muted"
-                        )}
+                        className="px-3 py-1 text-sm rounded-full font-medium bg-accent/20 text-accent"
                       >
                         {tag}
                       </span>
