@@ -35,12 +35,6 @@ const allProjects = [
     description: 'Problème: UX fragmentée → Approche: Design system unifié → Résultat: +150% engagement utilisateur',
     tags: ['Figma', 'React', 'Storybook'],
     type: 'personal'
-  },
-  {
-    title: 'Perso 3',
-    description: 'Problème: Analytics dispersées → Approche: Dashboard centralisé → Résultat: Décisions 5x plus rapides',
-    tags: ['D3.js', 'Python', 'FastAPI'],
-    type: 'personal'
   }
 ];
 
