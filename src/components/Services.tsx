@@ -26,7 +26,7 @@ const services = [
 
 const tools = [
   'HTML5', 'CSS3', 'JavaScript', 'React', 'Lovable', 'N8N',
-  'Figma', 'Python', 'GitHub', 'GenAI', 'Make'
+  'Figma', 'Python', 'GitHub', 'GenAI', 'Make', 'Airtable'
 ];
 
 export const Services = () => {
