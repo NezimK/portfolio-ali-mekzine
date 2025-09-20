@@ -1,7 +1,5 @@
 import { AnimatedSection } from './AnimatedSection';
-import { ExternalLink } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import quizSurasThumbnail from '@/assets/quizsuras-thumbnail.png';
 
 const allProjects = [
   {
@@ -32,10 +30,9 @@ const allProjects = [
   },
   {
     title: 'ElectroPro - Site Électricité & Innovation',
-    description: 'Site web professionnel pour une entreprise d\'électricité créé avec Lovable. Interface moderne avec services d\'urgence 24/7, devis en ligne et présentation des expertise techniques.',
-    tags: ['React', 'TypeScript', 'Tailwind CSS', 'Supabase', 'Lovable'],
+    description: 'Site web professionnel pour une entreprise d\'électricité. Interface moderne avec services d\'urgence 24/7, devis en ligne et présentation des expertise techniques.',
+    tags: ['React', 'TypeScript', 'Tailwind CSS', 'Supabase'],
     thumbnail: '/lovable-uploads/electropro-final-screenshot.png',
-    url: 'https://spark-stride-site-43.lovable.app',
     type: 'personal'
   }
 ];
@@ -58,89 +55,49 @@ export const Projects = () => {
         <AnimatedSection delay={200}>
           <div className="grid md:grid-cols-2 gap-8">
             {allProjects.map((project, index) => (
-              project.url ? (
-                <a
-                  href={project.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  key={project.title}
-                  className={cn(
-                    'card-premium group cursor-pointer block overflow-hidden',
-                    'hover-scale opacity-100'
+              <div
+                key={project.title}
+                className={cn(
+                  'card-premium group opacity-100'
+                )}
+              >
+                {/* Thumbnail Image */}
+                <div className="relative mb-4 rounded-lg overflow-hidden h-48 bg-card border border-border">
+                  {project.thumbnail ? (
+                    <img 
+                      src={project.thumbnail} 
+                      alt={`Capture d'écran du projet ${project.title} - ${project.description.slice(0, 80)}...`}
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                      width="400"
+                      height="300"
+                    />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center text-muted-foreground">
+                      <div className="w-16 h-16 bg-muted rounded" />
+                    </div>
                   )}
-                >
-                  {/* Thumbnail Image */}
-                  <div className="relative mb-4 rounded-lg overflow-hidden h-48 bg-card border border-border">
-                    {project.thumbnail ? (
-                      <img 
-                        src={project.thumbnail} 
-                        alt={`Capture d'écran du projet ${project.title} - ${project.description.slice(0, 80)}...`}
-                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                        loading="lazy"
-                        width="400"
-                        height="300"
-                      />
-                    ) : (
-                      <div className="w-full h-full flex items-center justify-center text-muted-foreground">
-                        <ExternalLink className="w-16 h-16" />
-                      </div>
-                    )}
-                  </div>
-                
-                  <div className="flex justify-between items-start mb-4">
-                    <h4 className="text-xl font-semibold group-hover:text-accent transition-colors">
-                      {project.title}
-                    </h4>
-                    <ExternalLink className="w-5 h-5 text-foreground-muted group-hover:text-accent transition-colors" />
-                  </div>
-                  
-                  <p className="text-foreground-muted mb-6 leading-relaxed">
-                    {project.description}
-                  </p>
-                  
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    {project.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="px-3 py-1 text-sm rounded-full font-medium bg-accent/20 text-accent"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                  
-                  <button className="btn-secondary w-full group-hover:border-accent/60 transition-colors">
-                    {project.type === 'professional' ? 'Visiter le site' : 'Voir le projet'}
-                  </button>
-                </a>
-              ) : (
-                <div
-                  key={project.title}
-                  className={cn(
-                    'card-premium group opacity-100'
-                  )}
-                >
-                  
-                  <h4 className="text-xl font-semibold mb-4 group-hover:text-accent transition-colors">
-                    {project.title}
-                  </h4>
-                  
-                  <p className="text-foreground-muted mb-6 leading-relaxed">
-                    {project.description}
-                  </p>
-                  
-                  <div className="flex flex-wrap gap-2">
-                    {project.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="px-3 py-1 bg-muted/50 text-foreground-muted text-sm rounded-full font-medium"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
                 </div>
-              )
+              
+                <h4 className="text-xl font-semibold mb-4">
+                  {project.title}
+                </h4>
+                
+                <p className="text-foreground-muted mb-6 leading-relaxed">
+                  {project.description}
+                </p>
+                
+                <div className="flex flex-wrap gap-2">
+                  {project.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="px-3 py-1 text-sm rounded-full font-medium bg-accent/20 text-accent"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
             ))}
           </div>
         </AnimatedSection>
