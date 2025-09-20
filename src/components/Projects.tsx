@@ -18,7 +18,7 @@ const allProjects = [
     description: 'Plateforme e-commerce moderne spécialisée dans les humidificateurs et produits de bien-être. Interface élégante avec système de panier, paiement sécurisé et gestion des commandes.',
     tags: ['React', 'E-commerce', 'Stripe', 'Design Premium'],
     url: 'https://airsana.fr/',
-    thumbnail: '/lovable-uploads/airsana-screenshot.png',
+    thumbnail: '/lovable-uploads/airsana-new-screenshot.png',
     featured: true,
     type: 'professional'
   },
