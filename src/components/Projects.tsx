@@ -34,7 +34,7 @@ const allProjects = [
     title: 'ElectroPro - Site Électricité & Innovation',
     description: 'Site web professionnel pour une entreprise d\'électricité créé avec Lovable. Interface moderne avec services d\'urgence 24/7, devis en ligne et présentation des expertise techniques.',
     tags: ['React', 'TypeScript', 'Tailwind CSS', 'Supabase', 'Lovable'],
-    thumbnail: '/lovable-uploads/electropro-project.png',
+    thumbnail: '/lovable-uploads/electropro-new-screenshot.jpg',
     url: 'https://spark-stride-site-43.lovable.app',
     type: 'personal'
   }
