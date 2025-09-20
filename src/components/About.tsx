@@ -45,7 +45,7 @@ export const About = () => {
                   <p className="text-lg md:text-xl text-foreground leading-relaxed">
                     Passionné par la technologie et l'innovation, mon parcours a naturellement débuté par le développement web avant de connaître une véritable révélation avec l'avènement de l'IA générative.
                   </p>
-                  <p className="text-lg md:text-xl text-foreground-muted leading-relaxed">
+                  <p className="text-lg md:text-xl text-foreground leading-relaxed">
                     J'ai rapidement compris que son potentiel allait nous permettre de révolutionner notre manière de travailler. J'ai donc décidé de me spécialiser dans l'intégration de l'IA, pour optimiser ce temps qui nous est si précieux.
                   </p>
                 </div>
