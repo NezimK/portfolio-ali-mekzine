@@ -52,7 +52,7 @@ export const About = () => {
 
                 {/* Troisième bloc rectangulaire - Citation */}
                 <div className="glass p-8 md:p-10 rounded-2xl border border-accent/20 bg-gradient-to-br from-accent/5 to-gold/5">
-                  <div className="flex items-start space-x-4">
+                  <div className="flex items-center space-x-4">
                     <div className="w-1 h-16 bg-gradient-to-b from-accent to-gold rounded-full flex-shrink-0"></div>
                     <p className="text-xl md:text-2xl text-accent font-medium leading-relaxed italic">
                       Ma conviction est que l'IA n'est pas un remplaçant, mais un véritable copilote. Un assistant surpuissant qui facilite la prise de décision et élimine les tâches répétitives, libérant ainsi votre énergie pour ce qui vous tient réellement à cœur.
