@@ -40,15 +40,11 @@ export const About = () => {
           <div className="max-w-4xl mx-auto">
             <AnimatedSection delay={200}>
               <div className="grid gap-8 md:gap-10">
-                {/* Premier bloc rectangulaire */}
-                <div className="glass p-8 md:p-10 rounded-2xl border border-accent/20">
+                {/* Premier bloc rectangulaire fusionné */}
+                <div className="glass p-8 md:p-10 rounded-2xl border border-accent/20 space-y-6">
                   <p className="text-lg md:text-xl text-foreground leading-relaxed">
                     Passionné par la technologie et l'innovation, mon parcours a naturellement débuté par le développement web avant de connaître une véritable révélation avec l'avènement de l'IA générative.
                   </p>
-                </div>
-
-                {/* Deuxième bloc rectangulaire */}
-                <div className="glass p-8 md:p-10 rounded-2xl border border-gold/20">
                   <p className="text-lg md:text-xl text-foreground-muted leading-relaxed">
                     J'ai rapidement compris que son potentiel allait nous permettre de révolutionner notre manière de travailler. J'ai donc décidé de me spécialiser dans l'intégration de l'IA, pour optimiser ce temps qui nous est si précieux.
                   </p>
