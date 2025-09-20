@@ -37,28 +37,31 @@ export const About = () => {
             </header>
           </AnimatedSection>
 
-          <div className="max-w-3xl mx-auto text-center">
+          <div className="max-w-4xl mx-auto">
             <AnimatedSection delay={200}>
-              <div className="glass p-10 md:p-16 space-y-12 rounded-3xl border border-accent/10">
-                <div className="space-y-8">
-                  <p className="text-xl md:text-2xl text-foreground leading-relaxed font-light">
+              <div className="grid gap-8 md:gap-10">
+                {/* Premier bloc rectangulaire */}
+                <div className="glass p-8 md:p-10 rounded-2xl border border-accent/20">
+                  <p className="text-lg md:text-xl text-foreground leading-relaxed">
                     Passionné par la technologie et l'innovation, mon parcours a naturellement débuté par le développement web avant de connaître une véritable révélation avec l'avènement de l'IA générative.
                   </p>
+                </div>
+
+                {/* Deuxième bloc rectangulaire */}
+                <div className="glass p-8 md:p-10 rounded-2xl border border-gold/20">
                   <p className="text-lg md:text-xl text-foreground-muted leading-relaxed">
                     J'ai rapidement compris que son potentiel allait nous permettre de révolutionner notre manière de travailler. J'ai donc décidé de me spécialiser dans l'intégration de l'IA, pour optimiser ce temps qui nous est si précieux.
                   </p>
                 </div>
-                
-                <div className="relative">
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-accent/20 to-transparent h-px"></div>
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-gold/20 to-transparent h-px transform translate-y-1"></div>
-                </div>
-                
-                <div className="relative bg-gradient-to-br from-accent/5 to-gold/5 p-8 rounded-2xl border border-accent/10">
-                  <div className="absolute top-0 left-0 w-16 h-16 bg-gradient-to-br from-accent/20 to-gold/20 rounded-br-3xl"></div>
-                  <p className="text-xl md:text-2xl text-accent font-medium leading-relaxed italic">
-                    "Ma conviction est que l'IA n'est pas un remplaçant, mais un véritable copilote. Un assistant surpuissant qui facilite la prise de décision et élimine les tâches répétitives, libérant ainsi votre énergie pour ce qui vous tient réellement à cœur."
-                  </p>
+
+                {/* Troisième bloc rectangulaire - Citation */}
+                <div className="glass p-8 md:p-10 rounded-2xl border border-accent/20 bg-gradient-to-br from-accent/5 to-gold/5">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-1 h-16 bg-gradient-to-b from-accent to-gold rounded-full flex-shrink-0"></div>
+                    <p className="text-xl md:text-2xl text-accent font-medium leading-relaxed italic">
+                      Ma conviction est que l'IA n'est pas un remplaçant, mais un véritable copilote. Un assistant surpuissant qui facilite la prise de décision et élimine les tâches répétitives, libérant ainsi votre énergie pour ce qui vous tient réellement à cœur.
+                    </p>
+                  </div>
                 </div>
               </div>
             </AnimatedSection>
