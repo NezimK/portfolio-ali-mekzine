@@ -20,9 +20,11 @@ const pillars = [{
 export const About = () => {
   return <section id="about" className="section-padding bg-background-secondary relative overflow-hidden" aria-labelledby="about-heading">
       {/* Decorative background elements */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-accent/20 rounded-full blur-xl"></div>
-        <div className="absolute bottom-1/3 right-1/4 w-24 h-24 bg-gold/20 rounded-full blur-xl"></div>
+      <div className="absolute inset-0 opacity-20">
+        <div className="absolute top-10 left-10 w-40 h-40 bg-gradient-to-br from-accent/30 to-gold/30 rounded-full blur-2xl animate-pulse"></div>
+        <div className="absolute top-1/3 right-20 w-28 h-28 bg-accent/25 rounded-full blur-xl"></div>
+        <div className="absolute bottom-20 left-1/3 w-36 h-36 bg-gold/25 rounded-full blur-xl"></div>
+        <div className="absolute bottom-1/4 right-10 w-20 h-20 bg-gradient-to-br from-gold/40 to-accent/40 rounded-full blur-lg"></div>
       </div>
       
       <div className="container mx-auto px-6 relative z-10">
