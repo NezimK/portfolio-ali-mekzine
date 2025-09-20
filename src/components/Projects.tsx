@@ -31,9 +31,11 @@ const allProjects = [
     type: 'personal'
   },
   {
-    title: 'Perso 2',
-    description: 'Problème: UX fragmentée → Approche: Design system unifié → Résultat: +150% engagement utilisateur',
-    tags: ['Figma', 'React', 'Storybook'],
+    title: 'ElectroPro - Site Électricité & Innovation',
+    description: 'Site web professionnel pour une entreprise d\'électricité créé avec Lovable. Interface moderne avec services d\'urgence 24/7, devis en ligne et présentation des expertise techniques.',
+    tags: ['React', 'TypeScript', 'Tailwind CSS', 'Lovable'],
+    thumbnail: '/lovable-uploads/electropro-project.png',
+    url: 'https://spark-stride-site-43.lovable.app',
     type: 'personal'
   }
 ];
